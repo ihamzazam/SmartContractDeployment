@@ -23,3 +23,6 @@ jobs:
         
       - name: Installing hardhat
         run: npm install -g hardhat
+        
+      - name: Compile contract
+        run: npx ardhat compile
