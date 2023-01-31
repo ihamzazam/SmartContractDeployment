@@ -1,10 +1,8 @@
 require("@nomicfoundation/hardhat-toolbox");
 
-import dotenv from "dotenv";
-
 require('dotenv').config(); 
 
-const deployKey = process.env.example.PRIVATE_KEY;
+const deployKey = process.env.PRIVATE_KEY;
 
 //const deployKey = '54ee5949d58d0b1e7fa479ffd8cf182b0ec18977278c6f38e26024760d37d8ab'
 // Go to https://www.alchemyapi.io, sign up, create
