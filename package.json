@@ -12,7 +12,6 @@
     "hardhat": "^2.12.6"
   },
   "dependencies": {
-    "dotenv": "^16.0.3",
-    "@nomiclabs/hardhat-toolbox": "^1.0.0"
+    "dotenv": "^16.0.3"
   }
 }
