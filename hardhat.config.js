@@ -1,6 +1,6 @@
 require("@nomicfoundation/hardhat-toolbox");
 
-require('dotenv').config(); 
+//require('dotenv').config(); 
 
 const deployKey = process.env.PRIVATE_KEY;
 
