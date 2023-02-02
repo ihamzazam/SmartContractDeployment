@@ -1,11 +1,19 @@
 name: Automated Deployment of Smart Contracts
 
 on: 
-  push:
-    branches:
-      - main
+  #push:
+    #branches:
+      #- main
+  workflow_dispatch:
+    inputs:      
+        network:
+        name: Network to Deploy to
+        description: 'Enter the network to deploy to: EWC ot Volta'
+        required: true
+        default: volta
+    
 env:
-      PRIVATE_KEY: ${{ secrets.PRIVATE_KEY }}
+  PRIVATE_KEY: ${{ secrets.PRIVATE_KEY }}
 
 jobs:
   deploy:
@@ -33,4 +41,4 @@ jobs:
         run: npx hardhat test
 
       - name: Deploy contract
-        run: npx hardhat run scripts/deploy.js --network volta
+        run: npx hardhat run scripts/deploy.js --network ${{ env.network }}
