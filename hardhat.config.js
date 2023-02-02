@@ -31,7 +31,7 @@ module.exports = {
     ewc: {
       url: "https://rpc.energyweb.org",
       chainId: 246,
-      accounts: [deployer_privateKey],
+      accounts: [deployKey],
       
     },
   }
