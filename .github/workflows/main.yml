@@ -4,6 +4,8 @@ on:
   push:
     branches:
       - main
+env:
+      PRIVATE_KEY: ${{ secrets.PRIVATE_KEY }}
 
 jobs:
   deploy:
