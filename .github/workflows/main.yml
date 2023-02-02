@@ -41,4 +41,4 @@ jobs:
         run: npx hardhat test
 
       - name: Deploy contract
-        run: npx hardhat run scripts/deploy.js --network ${{ env.network }}
+        run: npx hardhat run scripts/deploy.js --network ${{ inputs.network }}
