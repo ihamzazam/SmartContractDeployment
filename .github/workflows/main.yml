@@ -11,6 +11,10 @@ on:
           description: 'Enter the network to deploy to: EWC or Volta'
           required: true
           default: volta
+          type: select
+          options:
+            - EWC
+            - Volta
     
 env:
   PRIVATE_KEY: ${{ secrets.PRIVATE_KEY }}
