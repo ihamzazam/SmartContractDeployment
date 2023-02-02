@@ -8,7 +8,7 @@ on:
     inputs:      
         network:
 #          name: Network to Deploy to
-          description: 'Enter the network to deploy to: EWC ot Volta'
+          description: 'Enter the network to deploy to: EWC or Volta'
           required: true
           default: volta
     
