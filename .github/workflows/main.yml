@@ -7,10 +7,10 @@ on:
   workflow_dispatch:
     inputs:      
         network:
-        name: Network to Deploy to
-        description: 'Enter the network to deploy to: EWC ot Volta'
-        required: true
-        default: volta
+#          name: Network to Deploy to
+          description: 'Enter the network to deploy to: EWC ot Volta'
+          required: true
+          default: volta
     
 env:
   PRIVATE_KEY: ${{ secrets.PRIVATE_KEY }}
