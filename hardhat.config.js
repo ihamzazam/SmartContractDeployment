@@ -27,7 +27,7 @@ module.exports = {
       url: "https://volta-rpc.energyweb.org",
       accounts: [deployKey],
       chainId: 73799
-    }
+    },
     ewc: {
       url: "https://rpc.energyweb.org",
       chainId: 246,
