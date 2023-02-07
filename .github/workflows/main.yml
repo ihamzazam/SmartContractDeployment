@@ -15,7 +15,8 @@ on:
 #          - ewc
 #          required: true
 #          default: volta
-    
+env:
+  PRIVATE_KEY: ${{ secrets.PRIVATE_KEY }}
 
 
 jobs:
@@ -46,8 +47,6 @@ jobs:
         run: npx hardhat test
 
       - name: Deploy contract
-        env:
-          PRIVATE_KEY: ${{ secrets.PRIVATE_KEY }}
         run: npx hardhat run scripts/deploy.js --network volta
         
   Prod:
