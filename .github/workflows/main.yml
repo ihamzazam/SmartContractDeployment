@@ -5,8 +5,8 @@ on:
     #branches:
       #- main
   workflow_dispatch:
-    inputs:      
-        network:
+  #  inputs:      
+   #     network:
 #          name: Network to Deploy to
 #          type: choice
 #          description: 'Enter the network to deploy to: EWC or Volta'
