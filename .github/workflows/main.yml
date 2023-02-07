@@ -8,20 +8,21 @@ on:
     inputs:      
         network:
 #          name: Network to Deploy to
-          type: choice
-          description: 'Enter the network to deploy to: EWC or Volta'
-          options:
-          - volta
-          - ewc
-          required: true
-          default: volta
+#          type: choice
+#          description: 'Enter the network to deploy to: EWC or Volta'
+#          options:
+#          - volta
+#          - ewc
+#          required: true
+#          default: volta
     
-env:
-  PRIVATE_KEY: ${{ secrets.PRIVATE_KEY }}
+
 
 jobs:
-  deploy:
+
+  Dev:
     runs-on: ubuntu-latest
+    environment: development
     
     steps:
       - name: Checkout code
@@ -45,4 +46,18 @@ jobs:
         run: npx hardhat test
 
       - name: Deploy contract
-        run: npx hardhat run scripts/deploy.js --network ${{ inputs.network }}
+        env:
+        PRIVATE_KEY: ${{ secrets.PRIVATE_KEY }}
+        run: npx hardhat run scripts/deploy.js --network volta
+        
+  Prod:
+    runs-on: ubuntu-latest
+    environment: production
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+        
+      - name: Test
+        run: |
+          echo "Production Env!"
