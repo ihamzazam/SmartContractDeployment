@@ -1,4 +1,5 @@
 const { ethers } = require("hardhat");
+const fs = require("fs");
 
 async function main() {
   // Deploy Original contract
@@ -7,6 +8,9 @@ async function main() {
   await box.deployed();
 
   console.log("Box deployed to:", box.address);
+
+  // Write contract address to file
+  fs.writeFileSync("./box-address.txt", box.address);
 }
 
 main()
