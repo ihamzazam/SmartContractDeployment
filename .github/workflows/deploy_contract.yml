@@ -40,7 +40,7 @@ jobs:
 
       - name: Deploy Contract
         runs-on: ubuntu-latest
-        steps:
+
       - name: Deploy contract
         run: npx hardhat run scripts/deploy_contract.js --network volta
 
