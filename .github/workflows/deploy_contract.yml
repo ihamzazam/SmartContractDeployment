@@ -38,9 +38,6 @@ jobs:
       - name: Test contract
         run: npx hardhat test
 
-      - name: Deploy Contract
-        runs-on: ubuntu-latest
-
       - name: Deploy contract
         run: npx hardhat run scripts/deploy_contract.js --network volta
 
