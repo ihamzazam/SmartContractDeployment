@@ -46,7 +46,7 @@ jobs:
 
     deploy-proxy:
       runs-on: ubuntu-latest
-      if: contains(github.event.head_commit.modified, 'proxy/')
+      if: contains(github.event.head_commit.modified, 'transparent/')
       needs: deploy
       steps:
       - name: Deploy proxy
