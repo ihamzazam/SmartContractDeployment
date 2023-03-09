@@ -17,16 +17,16 @@ jobs:
     if: contains(github.event.head_commit.modified, 'contracts/')
     name: Deploy Contract
     runs-on: ubuntu-latest
-    steps:
+    steps: 
       - name: Checkout code
         uses: actions/checkout@v2
         
       - name: Setup Node.js
         uses: actions/setup-node@v2
         with:
-          node:version: current
+          node-version: current
           
-      - name: Install depndencies 
+      - name: Install dependencies 
         run: npm ci
         
       - name: Installing hardhat
@@ -46,5 +46,16 @@ jobs:
     if: contains(github.event.head_commit.modified, 'transparent/')
     needs: deploy
     steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: current
+
+      - name: Install dependencies 
+        run: npm ci
+
       - name: Deploy proxy
         run: npx hardhat run scripts/deployProxy.js --network volta
